@@ -4,7 +4,13 @@ import { useGesture } from "react-use-gesture";
 import "./Deck.css";
 
 const Deck = () => {
-  const [gone] = useState(() => new Set());
+  return (
+    <div className="deck__container">
+      <div className="deck__item">
+        <h1>Hello</h1>
+      </div>
+    </div>
+  );
 };
 
 export default Deck;

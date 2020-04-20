@@ -1,0 +1,24 @@
+.deck__container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deck__item {
+  background: white;
+  z-index: 100;
+  color: #282c34;
+  width: 45vw;
+  max-width: 350px;
+  height: 85vh;
+  max-height: 570px;
+  border-radius: 10px;
+  will-change: transform;
+  -webkit-box-shadow: 0px 0px 40px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 40px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 40px 2px rgba(0, 0, 0, 0.75);
+}
