@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
+import Loading from "./Loading";
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hello test</h1>
+        <Loading></Loading>
       </header>
     </div>
   );
-}
+};
 
 export default App;
