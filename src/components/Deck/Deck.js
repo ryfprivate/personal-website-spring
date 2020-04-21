@@ -30,10 +30,17 @@ const Deck = () => {
   }));
 
   // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
-  const bind = useDrag(
-    ({ args: [index], down, delta: [xDelta], direction: [xDir], velocity }) => {
+  const bind = useGesture({
+    onDrag: ({
+      args: [index],
+      down,
+      delta: [xDelta, yDelta],
+      direction: [xDir, yDir],
+      velocity,
+    }) => {
       const trigger = velocity > 0.2; // If you flick hard enough it should trigger the card to fly out
       const dir = xDir < 0 ? -1 : 1; // Direction should either point left or right
+
       if (!down && trigger) gone.add(index); // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
       set((i) => {
         if (index !== i) return; // We're only interested in changing spring-data for the current spring
@@ -49,10 +56,12 @@ const Deck = () => {
           config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 },
         };
       });
-      if (!down && gone.size === cards.length)
+      if (!down && gone.size === cards.length) {
+        // No more cards left
         setTimeout(() => gone.clear() || set((i) => to(i)), 600);
-    }
-  );
+      }
+    },
+  });
 
   return props.map(({ x, y, rot, scale }, i) => (
     <animated.div
