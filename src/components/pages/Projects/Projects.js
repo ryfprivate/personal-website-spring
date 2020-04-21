@@ -5,8 +5,8 @@ import "./Projects.css";
 
 const Projects = () => {
   return (
-    <div className="projects__wrapper">
-      <div className="projects__overlay">
+    <div className="wrapper__page--projects">
+      <div className="overlay__page--projects">
         <Deck></Deck>
       </div>
     </div>
