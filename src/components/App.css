@@ -4,20 +4,6 @@
   width: 100%;
   text-align: center;
   color: white;
-
-  background-image: url("../images/surface.jpg");
-  background-color: rgba(248, 247, 216, 0.7);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.App__overlay {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-
-  background-color: rgba(33, 33, 33, 0.7);
 }
 
 .App-link {

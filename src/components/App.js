@@ -1,21 +1,17 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Loading from "./Loading";
-import Deck from "./Deck";
 
-import Projects from "./pages/Projects";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects/Projects";
 import "./App.css";
 
 const App = () => {
   return (
     <>
-      <div className="App">
-        <div className="App__overlay">
-          <Projects></Projects>
-          <h1>Put a navbar here</h1>
-          <Deck></Deck>
-        </div>
-      </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/projects" component={Projects} />
+      </Switch>
     </>
   );
 };
